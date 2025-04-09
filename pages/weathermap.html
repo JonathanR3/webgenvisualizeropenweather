@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GeoWeather - Weather Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <ul>
+        <li>
+            <span class="logo">GeoWeather</span>
+            <button onclick=toggleSidebar() id="toggle-button">
+                <img src="../media/double-arrow.svg" alt="sidebar" />
+            </button>
+        </li>
+        <li>
+            <a href="search.html">
+                <img src="../media/search.svg" alt="search" />
+                <span>Search</span>
+            </a>
+        </li>
+        <li>
+            <button onclick=toggleDropDown(this) class="dropdown-button active">
+                <img src="../media/map.svg" alt="search" />
+                <span>Mapping</span>
+                <img src="../media/down-arrow.svg" alt="down-arrow" />
+            </button>
+            <ul class="map-sub-menu">
+                <div>
+                    <li><a href="airmap.html">Air Quality</a></li>
+                    <li><a href="firemap.html">Fire Index</a></li>
+                    <li><a href="weathermap.html" class="active">General Weather</a></li>
+                </div>
+            </ul>
+        </li>
+        <li>
+            <a href="forecast.html">
+                <img src="../media/weather.svg" alt="search" />
+                <span>Forecasts</span>
+            </a>
+        </li>
+        <li>
+            <a href="routing.html">
+                <img src="../media/car.svg" alt="search" />
+                <span>Routing</span>
+            </a>    
+        </li>
+      </ul>
+    </nav>
+    <main id="main">
+        <div id="taskbar">
+            <select id="layerSelector">
+                <option value="precipitation">Precipitation</option>
+                <option value="temp">Temperature</option>
+                <option value="wind">Wind Speed</option>
+                <option value="clouds">Clouds</option>
+                <option value="pressure">Sea Level Pressure</option>
+            </select>
+            <button id="fetchData">Fetch Weather Data</button>
+        </div>          
+        <div id="map"></div>
+    </main>
+    <script src="../config.js"></script>
+    <script src="../coordinates.js"></script>
+    <script src="../api/weatherAPI.js"></script>
+    <script src="../sidebar.js"></script>
+  </body>
+</html>

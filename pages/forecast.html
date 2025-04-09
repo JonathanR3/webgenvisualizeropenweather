@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GeoWeather - Forecast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <ul>
+        <li>
+            <span class="logo">GeoWeather</span>
+            <button onclick=toggleSidebar() id="toggle-button">
+                <img src="../media/double-arrow.svg" alt="sidebar" />
+            </button>
+        </li>
+        <li>
+            <a href="search.html">
+                <img src="../media/search.svg" alt="search" />
+                <span>Search</span>
+            </a>
+        </li>
+        <li>
+            <button onclick=toggleDropDown(this) class="dropdown-button">
+                <img src="../media/map.svg" alt="search" />
+                <span>Mapping</span>
+                <img src="../media/down-arrow.svg" alt="down-arrow" />
+            </button>
+            <ul class="map-sub-menu">
+                <div>
+                    <li><a href="airmap.html">Air Quality</a></li>
+                    <li><a href="firemap.html">Fire Index</a></li>
+                    <li><a href="weathermap.html">General Weather</a></li>
+                </div>
+            </ul>
+        </li>
+        <li>
+            <a href="forecast.html" class="active">
+                <img src="../media/weather.svg" alt="search" />
+                <span>Forecasts</span>
+            </a>
+        </li>
+        <li>
+            <a href="routing.html">
+                <img src="../media/car.svg" alt="search" />
+                <span>Routing</span>
+            </a>    
+        </li>
+      </ul>
+    </nav>
+    <main id="main">
+        <div id="taskbar">
+            <button id="fetchData">Fetch Air Pollution Data</button>  
+        </div>
+        <div id="data"></div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non luctus lorem. Etiam elementum et libero ut efficitur. Sed vitae rutrum turpis, sit amet luctus nisl. Morbi quam velit, hendrerit vitae ligula sed, feugiat auctor lorem. Mauris iaculis enim a augue egestas sodales. Quisque sit amet sem id eros commodo commodo. Mauris in sem luctus, pulvinar lacus vitae, semper ipsum. Integer luctus ac sem at finibus. Fusce placerat dictum felis. Curabitur ullamcorper fermentum nisi, a eleifend ipsum volutpat vel. Duis sed dui at diam venenatis pellentesque. Morbi convallis facilisis odio, a euismod risus elementum id. Duis ultrices lorem nisl, vel semper eros posuere vel. 
+    </main>
+    <script src="../config.js"></script>
+    <script src="../sidebar.js" async defer></script>
+  </body>
+</html>

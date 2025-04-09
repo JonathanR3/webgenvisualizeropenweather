@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GeoWeather - Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <ul>
+        <li>
+            <span class="logo">GeoWeather</span>
+            <button onclick=toggleSidebar() id="toggle-button">
+                <img src="../media/double-arrow.svg" alt="sidebar" />
+            </button>
+        </li>
+        <li>
+            <a href="search.html" class="active">
+                <img src="../media/search.svg" alt="search" />
+                <span>Search</span>
+            </a>
+        </li>
+        <li>
+            <button onclick=toggleDropDown(this) class="dropdown-button">
+                <img src="../media/map.svg" alt="search" />
+                <span>Mapping</span>
+                <img src="../media/down-arrow.svg" alt="down-arrow" />
+            </button>
+            <ul class="map-sub-menu">
+                <div>
+                    <li><a id="link-1" href="airmap.html">Air Quality</a></li>
+                    <li><a id="link-2" href="firemap.html">Fire Index</a></li>
+                    <li><a id="link-3" href="weathermap.html">General Weather</a></li>
+                </div>
+            </ul>
+        </li>
+        <li>
+            <a href="forecast.html">
+                <img src="../media/weather.svg" alt="search" />
+                <span>Forecasts</span>
+            </a>
+        </li>
+        <li>
+            <a href="routing.html">
+                <img src="../media/car.svg" alt="search" />
+                <span>Routing</span>
+            </a>    
+        </li>
+      </ul>
+    </nav>
+    <main id="main">
+        <div id="taskbar">
+            <input type="text" id="locationSearch" placeholder="Search for a location..." />
+            <button id="fetchData">Fetch Air Pollution Data</button>
+        </div>
+        <div id="data"></div>
+    </main>
+    <script src="../config.js"></script>    
+    <script src="../sidebar.js" async defer></script>
+  </body>
+</html>
